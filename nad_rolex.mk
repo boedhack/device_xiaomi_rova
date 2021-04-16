@@ -20,18 +20,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-# Inherit some common Wave-OS stuff
-$(call inherit-product, vendor/wave/configs/common.mk)
-
+# Inherit some common Nusantara stuff
+$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 720
-
-TARGET_OPT_OUT_GCAM_GO := true
-
-# Modify Codename in ZIP
-WAVE_BUILD := rolex-riva
-
-# Vanilla varient
-VANILLA_BUILD := true
+NAD_BUILD_TYPE := UNOFFICIAL
+USE_PIXEL_CHARGING := true
+TARGET_USES_BLUR := true
 
 # Inherit from rolex device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -40,7 +34,7 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 4A
 PRODUCT_DEVICE := rolex
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := wave_rolex
+PRODUCT_NAME := nad_rolex
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -52,4 +46,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="rolex-user 7.1.2 N2G47H V9.2.6.0.NCCMIEK release-keys"
 
 BUILD_FINGERPRINT := Xiaomi/rolex/rolex:7.1.2/N2G47H/V9.2.6.0.NCCMIEK:user/release-keys
-
