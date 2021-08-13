@@ -383,6 +383,10 @@ PRODUCT_PACKAGES += \
     PresencePolling \
     RcsService
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    init.performance_level.rc
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
